@@ -6,7 +6,8 @@ body{
     text-align: center;
     background-color: rgb(199, 191, 207);
     background-image: url(urna.jpeg);
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;

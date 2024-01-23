@@ -18,25 +18,24 @@
 
     <script>
         function calcular(){
-            var txti = window.document.querySelector('input#txtidade')
-            var res = window.document.querySelector('div#res')
-            var idade = Number(txti.value)
-            var img = document.createElement(`img`)
-            img.setAttribute(`id`, `foto`)
+            var txti = window.document.querySelector('input#txtidade');
+            var res = window.document.querySelector('div#res');
+            var idade = Number(txti.value);
+            var img = document.createElement(`img`);
+            img.setAttribute(`id`, `foto`);
 
-            res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p>`
-            if (idade > 16) {
-                
-                res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p> <p>Dirija-se a sua seção eleitoral!</p>`
-                
-            }else{
-                res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p> <p>Você ainda não pode votar</p>`
-                
-            }if (idade > 71){
-                res.innerHTML = `<p> Sua idade atual é <strong> ${idade} anos.</strong></p> <p>Você não é mais obrigado (a) a votar!</p>`
+            if (idade > 16 && idade <= 71){
+                res.innerHTML = `<p>Sua idade atual é: ${idade} anos.</p> <p>Dirija-se a sua seção eleitoral</p>`;
+                document.body.style.backgroundImage = "url('file:///C:/Users/Renan/Desktop/JS Fernando/js/luizfernando/exercicio001/vote.jpeg')";
+            } else if (idade > 71) {
+                res.innerHTML = `<p>Sua idade atual é: ${idade} anos.</p><p>Você não é mais obrigado a votar!`;
+                document.body.style.backgroundImage = "url('file:///C:/Users/Renan/Desktop/JS Fernando/js/luizfernando/exercicio001/idoso.jpeg')";
+            } else {
+                res.innerHTML = `<p>Sua idade atual é ${idade} anos.</p><p>Você ainda  não pode votar!</p>`;
+                document.body.style.backgroundImage = "url('file:///C:/Users/Renan/Desktop/JS Fernando/js/luizfernando/exercicio001/não.png')";
             }
         }
-
+       
 
              //apertar o botão "enter" para validar o resultado
         document.addEventListener('keypress', function (e) {
