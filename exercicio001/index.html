@@ -25,13 +25,13 @@
 
             if (idade > 16 && idade <= 71){
                 res.innerHTML = `<p>Sua idade atual é: ${idade} anos.</p> <p>Dirija-se a sua seção eleitoral</p>`;
-                document.body.style.backgroundImage = "url('file:///C:/Users/Renan/Desktop/JS Fernando/js/luizfernando/exercicio001/vote.jpeg')";
+                document.body.style.backgroundImage = "url('vote.jpeg')";
             } else if (idade > 71) {
                 res.innerHTML = `<p>Sua idade atual é: ${idade} anos.</p><p>Você não é mais obrigado a votar!`;
-                document.body.style.backgroundImage = "url('file:///C:/Users/Renan/Desktop/JS Fernando/js/luizfernando/exercicio001/idoso.jpeg')";
+                document.body.style.backgroundImage = "url('idoso.jpeg')";
             } else {
                 res.innerHTML = `<p>Sua idade atual é ${idade} anos.</p><p>Você ainda  não pode votar!</p>`;
-                document.body.style.backgroundImage = "url('file:///C:/Users/Renan/Desktop/JS Fernando/js/luizfernando/exercicio001/não.png')";
+                document.body.style.backgroundImage = "url('não.png')";
             }
         }
        
