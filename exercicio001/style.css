@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(199, 191, 207);
+    background-image: url(urna.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    margin-left: 20;
+}
+
+h1{
+    font-size: 40px;
+    color: blueviolet;
+    text-align: center;
+    background-color: rgb(196, 149, 240);
+}
+
+div#res{
+    color: blueviolet;
+}
+
+p{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(238, 27, 27);
+}
+
+div#res{
+    font-size: 20px;
+   
+}
+
+input {
+    height: 22px;
+}
+
+input[type="button"]{
+    background-color: rgb(197, 144, 247);
+    color: blueviolet;
+    height: 30px;
+    width: 150px;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+
+}

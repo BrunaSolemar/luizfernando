@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Idade para votação</h1>
+    <p>
+        Informe sua idade: <br> <input type="number" name="txtidade" id="txtidade"> anos <br>
+        <input type="button" value="Verificar" height="50" onclick="calcular()">
+        <div id="res">
+        </div>
+    </p>
+
+    <script>
+        function calcular(){
+            var txti = window.document.querySelector('input#txtidade')
+            var res = window.document.querySelector('div#res')
+            var idade = Number(txti.value)
+            res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p>`
+            if (idade > 16) {
+                res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p> <p>Dirija-se a sua seção eleitoral!</p>`
+            }else{
+                res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p> <p>Você ainda não pode votar</p>`
+            }
+            
+        }
+    </script>
+
+
+</body>
+</html>
