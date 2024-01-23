@@ -21,9 +21,14 @@
             var txti = window.document.querySelector('input#txtidade')
             var res = window.document.querySelector('div#res')
             var idade = Number(txti.value)
+            var img = document.createElement(`img`)
+            img.setAttribute(`id`, `foto`)
+
             res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p>`
             if (idade > 16) {
+                
                 res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p> <p>Dirija-se a sua seção eleitoral!</p>`
+                
             }else{
                 res.innerHTML = `<p>Sua idade atual é <strong> ${idade} anos </strong></p> <p>Você ainda não pode votar</p>`
             }
@@ -34,7 +39,7 @@
             }
         }
 
-        
+
              //apertar o botão "enter" para validar o resultado
         document.addEventListener('keypress', function (e) {
                 if(e.key === 'Enter'){
