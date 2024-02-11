@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de idade</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Quem é mais velho?</h1>
+    <h2>Digite nome e idade de duas pessoas:</h2>
+
+    <p>
+        <h3>Pessoa 1:</h3>
+        <label for="nome1"><strong>Nome:</strong></label>
+        <input type="text" name="nome1" id="nome1"><br>
+        <label for="idade1"><strong>Idade:</strong></label>
+        <input type="number" name="idade1" id="idade1"><br>
+    </p>
+
+    <p>
+        <h3>Pessoa 2:</h3>
+        <label for="nome2"><strong>Nome:</strong></label>
+        <input type="text" name="nome2" id="nome2"><br>
+        <label for="idade2"><strong>Idade:</strong></label>
+        <input type="number" name="idade2" id="idade2">
+    </p><br>
+
+    <button onclick="compararIdades()">Comparar idade</button>
+    <p id="resultado"></p>
+
+    <script>
+
+        function compararIdades(){
+
+            var nome1 = document.getElementById("nome1").value;
+            var idade1 = parseInt(document.getElementById("idade1").value);
+            var nome2 = document.getElementById("nome2").value;
+            var idade2 = parseInt(document.getElementById("idade2").value);
+
+            if (idade1 > idade2){
+                document.getElementById("resultado").innerHTML = nome1 + " é mais velho(a) que " + nome2;
+
+            }else if (idade1 < idade2){
+                document.getElementById("resultado").innerHTML = nome2 + " é mais velho(a) que " + nome1;
+            }else{
+                document.getElementById("resultado").innerHTML = nome1 + " tem a mesma idade que " + nome2;
+            }
+            }
+
+        
+
+    </script>
+</html>
