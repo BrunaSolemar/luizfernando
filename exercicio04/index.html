@@ -15,29 +15,25 @@
 
 <body>
   
-    <label for="sexo">Sexo</label>
-    <input type="text" name="sexo" id="sexo" list="sex">
-
-    <datalist id="sex">
-        <option value="Feminino">
-        <option value="Masculino">
-    </datalist>
-    <br>
-
-
-    <label for="Nome">Nome</label>
-    <input type="text" name="nome" id="nome"><br>
-    
-    
-    <label for="idade">Idade</label>
-    <input type="number" name="idade" id="idade"><br>
-
-   
-    <label for="contri">Anos de contribuição</label>
-    <input type="number" name="contri" id="contri"><br>
-
-    <button onclick="calcularAposentadoria()">Calcular</button>
-    <p id="resultado">   </p>
+    <section>
+        <label for="sexo">Sexo</label>
+        <input type="text" name="sexo" id="sexo" list="sex">
+        <datalist id="sex">
+            <option value="Feminino">
+            <option value="Masculino">
+        </datalist>
+        <br>
+        <label for="Nome">Nome</label>
+        <input type="text" name="nome" id="nome"><br>
+        
+        
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade"><br>
+        <label for="contri">Anos de contribuição</label>
+        <input type="number" name="contri" id="contri"><br>
+        <button onclick="calcularAposentadoria()">Calcular</button>
+        <p id="resultado">   </p>
+    </section>
 
     <script>
         
