@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <section>
+        <div id="pesquisa">
+            <label for="numero">Digite um número inteiro:</label><br>
+            <input type="number" name="numero" id="numero"><br>
+            
+        </div>
+
+
+        <div id="tabuada">
+            <button id="exibirtabuada" onclick="exibirTabuada()">Exibir tabuada</button>
+            <div id="tabuada"></div>
+        </div>
+    </section>
+
+    <script>
+        function exibirTabuada(){
+
+            var numero = parseInt(document.getElementById('numero').value);
+            var tabuadaHTML = "Tabuada do " + numero + "<ul>";
+
+                for (var i = 1; i <= 10; i++) {
+                    tabuadaHTML += "<li>" + numero + " x " + i + " = " + (numero * i) + "</li>"; 
+                } /*for: é uma estrutura de controle de fluxo em JavaScript que permite executar um bloco de código repetidamente enquanto uma condição específica for verdadeira. No caso deste exemplo, estamos usando um loop for para executar o código que está dentro do bloco do loop várias vezes.
+
+var i = 1;: Esta é a inicialização do loop. Aqui, estamos inicializando uma variável chamada i e atribuindo o valor 1 a ela. A variável i geralmente é usada como um contador em loops.
+
+i <= 10;: Esta é a condição do loop. O loop continuará enquanto a condição i <= 10 for verdadeira. Ou seja, o loop continuará enquanto o valor de i for menor ou igual a 10.
+
+i++: Este é o incremento do loop. A cada iteração do loop, o valor de i será aumentado em 1. É equivalente a i = i + 1.
+
+Portanto, o trecho for (var i = 1; i <= 10; i++) cria um loop que começa com i igual a 1, continua enquanto i for menor ou igual a 10 e aumenta o valor de i em 1 a cada iteração do loop. Isso resulta em um loop que será executado 10 vezes, com i assumindo os valores de 1 a 10 em cada iteração.*/
+ 
+                tabuadaHTML += "</ul>";
+                document.getElementById('tabuada').innerHTML = tabuadaHTML;
+
+        }
+
+        document.addEventListener('keypress', function (e) {
+                if(e.key === 'Enter'){
+                    exibirTabuada();
+                }
+            });
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

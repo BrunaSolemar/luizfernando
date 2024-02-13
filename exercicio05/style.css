@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    overflow: hidden; /*tira a barra de rolagem da tela*/
+
+}
+
+body{
+    background-image: linear-gradient(to bottom, purple, plum);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+
+section > div#pesquisa{
+    text-align: center;
+    padding: 40px;
+    width: 500px;
+    margin: auto;
+    background-color:plum;
+    font-size: 2em;
+}
+
+section > div#tabuada{
+    text-align: center;
+    padding: 40px;
+    width: 500px;
+    margin: auto;
+    background-color: plum;
+    font-size: 2em;
+}
+
+input{
+    height: 30px;
+    width: 200px;
+    background-color: purple;
+}
+
+#exibirtabuada{
+    font-size: 1em; /*tamanho da fonte do botao*/
+    padding: 5px 8px; /*preenchimento interno do botao*/
+    min-width: 100px; /*largura minima do botao*/
+    background-color: purple;
+}
