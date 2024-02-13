@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+   
+    <h1>Informe seus dados</h1>
+
+</header>
+
+<body>
+  
+    <label for="sexo">Sexo</label>
+    <input type="text" name="sexo" id="sexo" list="sex">
+
+    <datalist id="sex">
+        <option value="Feminino">
+        <option value="Masculino">
+    </datalist>
+    <br>
+
+
+    <label for="Nome">Nome</label>
+    <input type="text" name="nome" id="nome"><br>
+    
+    
+    <label for="idade">Idade</label>
+    <input type="number" name="idade" id="idade"><br>
+
+   
+    <label for="contri">Anos de contribuição</label>
+    <input type="number" name="contri" id="contri"><br>
+
+    <button onclick="calcularAposentadoria()">Calcular</button>
+    <p id="resultado">   </p>
+
+    <script>
+        
+        function calcularAposentadoria(){
+
+            var nome = document.getElementById("nome").value;
+            var sexo = document.getElementById("sexo").value.toLowerCase();
+            var idade = parseInt(document.getElementById("idade").value);
+            var contribuicao = parseInt(document.getElementById("contri").value);
+            var resultadoParagrafo = document.getElementById("resultado");
+
+            if (sexo === 'feminino' && idade >= 62 && contribuicao >= 35){
+                resultadoParagrafo.textContent = "Parabéns " + nome + " você está apta a se aposentar";
+            }else if (sexo === 'masculino' && idade >= 35 && contribuicao >= 35 ){
+                resultadoParagrafo.textContent = "Parabéns "  + nome +  " você está apto a se aposentar";
+            }else{
+                resultadoParagrafo.textContent = nome + ', infelizmente terá que aguardar mais um pouco!'
+            }
+
+
+            }
+            document.addEventListener('keypress', function (e) {
+                if(e.key === 'Enter'){
+                    calcularAposentadoria();
+                }
+            });
+            
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

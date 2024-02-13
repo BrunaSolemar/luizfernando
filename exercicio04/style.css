@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+*{
+    margin-bottom: 18px; /*separação maior entre linhas*/
+}
+
+header{
+    color: rgb(87, 163, 138);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: rgba(175, 224, 208, 0.603);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3em;
+}
+
+button{
+    height: 4vh;
+    width: 9vw;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 7px;
+    background-color: rgba(43, 77, 65, 0.219);
+}
+
+input{
+    border-radius: 5px;
+}
