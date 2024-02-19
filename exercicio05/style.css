@@ -48,3 +48,9 @@ input{
     min-width: 100px; /*largura minima do botao*/
     background-color: purple;
 }
+
+@media screen and (max-width:600px) {
+    #conteiner{
+        font-size: 1.5em; /*reduz o tamanho da fonte para telas menores*/
+    }
+}
