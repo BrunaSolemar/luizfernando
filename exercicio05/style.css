@@ -18,12 +18,21 @@ body{
 }
 
 
-#container{
+section > div#pesquisa{
     text-align: center;
     padding: 40px;
     width: 500px;
     margin: auto;
     background-color:plum;
+    font-size: 2em;
+}
+
+section > div#tabuada{
+    text-align: center;
+    padding: 40px;
+    width: 500px;
+    margin: auto;
+    background-color: plum;
     font-size: 2em;
 }
 
@@ -38,11 +47,4 @@ input{
     padding: 5px 8px; /*preenchimento interno do botao*/
     min-width: 100px; /*largura minima do botao*/
     background-color: purple;
-}
-
-@media screen and (max-width: 600px) {
-    #container{
-        font-size: 1.5em; /*reduz o tamanho da fonte para telas menores*/
-    }
-    
 }
