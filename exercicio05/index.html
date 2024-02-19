@@ -13,14 +13,14 @@
         <div id="pesquisa">
             <label for="numero">Digite um número inteiro:</label><br>
             <input type="number" name="numero" id="numero"><br>
-            
+            <button id="exibirtabuada" onclick="exibirTabuada()">Exibir tabuada</button>
         </div>
 
 
         <div id="tabuada">
-            <button id="exibirtabuada" onclick="exibirTabuada()">Exibir tabuada</button>
+            
            </div>
-        </div>
+        
     </section>
 
     <script>
@@ -43,6 +43,8 @@ Portanto, o trecho for (var i = 1; i <= 10; i++) cria um loop que começa com i 
  
                 tabuadaHTML += "</ul>";
                 document.getElementById('tabuada').innerHTML = tabuadaHTML;
+
+                document.getElementById('exibirtabuada').focus();
 
         }
 
