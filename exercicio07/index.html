@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Informe seus dados:</h1>
+
+    <p>
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" name="nome" id="nome"><br>
+        <label for="sexo">Selecione seu sexo:</label>
+        <input type="radio" name="genero" id="masculino">
+        <label for="masculino">Masculino</label>
+        <input type="radio" name="genero" id="feminino">
+        <label for="feminino">Feminino</label><br>
+        <label for="altura">Digite sua altura:</label>
+        <input type="text" name="altura" id="altura" onkeypress="return validarNumero(event)" oninput="formatarAltura(event)"><br> <!--aqui é pra não deixar colocar letras no campo de altura, apenas numeros-->
+        <input type="button" value="Exibir" onclick="exibir()">
+    </p>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function validarNumero(event){ //permite apenas numeros
+            
+            var tecla = event.key;
+            var regex = /[0-9.,]/; 
+            if (!regex.test(tecla)){
+                event.preventDefault();
+                return false;
+            }
+        }
+
+        function formatarAltura(event) {
+            var input = event.target;
+            var valor = input.value;
+            valor = valor.replace(',', '.'); // Substituir "," por "."
+            input.value = valor;
+        }
+
+        function exibir(){
+            var nome = document.getElementById("nome").value;
+            var alturaString = document.getElementById("altura").value;
+            alturaString = alturaString.replace(',','.'); //substituir " , " por " . "
+            var altura = parseFloat(alturaString); //converte numero para decimal
+            var masculino = document.getElementById("masculino").checked;
+            var feminino = document.getElementById("feminino").checked;
+            var mensagem = "";
+
+            if (masculino && altura < 1.72){
+            mensagem = nome + ", você está abaixo da média de estatura!";
+            }else if (feminino && altura < 1.60){
+                mensagem = nome + ", você está abaixo da média de estatura!";
+            }else if (masculino && altura > 1.80){
+                mensagem = nome + ", você é bem alto!"
+            }else if (feminino && altura > 1.75){
+                mensagem = nome + ", você é bem alta!"
+
+            }else {
+                mensagem = nome + ", você tem uma altura normal!";
+            }
+            document.getElementById("mensagem").innerText = mensagem;
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

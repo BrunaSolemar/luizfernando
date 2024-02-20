@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    color: rgb(90, 2, 90);
+}
+
+body{
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(159, 86, 228, 0.463);
+}
+
+label{
+    padding: 15px;
+}
+
+input{
+    padding: 6px;
+    margin: 10px;
+    background-color: rgba(97, 10, 179, 0.215);
+}
+
+@media screen and (max-width: 600px){
+    p{
+        font-size: 1.1em;
+    }
+}
