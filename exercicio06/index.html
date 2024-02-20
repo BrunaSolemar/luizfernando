@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora atual</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
 
-    <label for="Nome">Infome seu nome:</label>
-    <input type="text" name="nome" id="nome" oninput="validarNome(event)">
+    <label for="Nome">Infome seu nome:</label><br>
+    <input type="text" name="nome" id="nome" oninput="validarNome(event)"> <br>
 
     <button onclick="exibirCumprimento()">clique</button>
 
@@ -33,21 +34,25 @@
 
             if (hora < 12){
                 mensagem = "Bom dia, " + nome + "!";
+               
             }else if (hora < 18) {
                 mensagem = "Boa tarde, " + nome + "!"
             }else {
-                mensagem = "Boa noite, " + nome + "1"
+                mensagem = "Boa noite, " + nome + "!"
             }
 
             document.getElementById("mensagem").innerText = mensagem;
-
+            
         }
+
+    
+
         document.addEventListener('keypress', function (e) {
                 if(e.key === 'Enter'){
                     exibirCumprimento();
                 }
             });
-
+            exibirCumprimento();
 
     </script>
 </body>
