@@ -55,6 +55,12 @@
             var altura = parseFloat(alturaString); //converte numero para decimal
             var masculino = document.getElementById("masculinoRadio").checked;
             var feminino = document.getElementById("femininoRadio").checked;
+            
+            if (nome === '' || (!masculino && !feminino) || isNaN(altura)) {
+                document.getElementById("mensagem").innerText = "Por favor, preencha todos os campos.";
+                return; // Não permite continuar se algum campo não estiver preenchido
+            }
+
             var mensagem = "";
 
             if (masculino && altura < 1.72){
@@ -95,7 +101,7 @@
                     exibir();
                 }
             });
-            exibir();
+            
 
 
 
