@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+body{
+    background-image: linear-gradient(to top, rgb(151, 151, 236), rgb(119, 119, 221));
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 10;
+    padding: 10;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    font-size: 1.2em;
+}
+
+input{
+    padding: 8px;
+    margin: 10px;
+}
+
+p{
+    font-size: 1.2em;
+}
+
+input.custom-button{
+    color: purple;
+    font-size: 1em;
+}
