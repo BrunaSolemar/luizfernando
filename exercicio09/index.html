@@ -23,6 +23,12 @@
         function calcularAumento(){
             var nome = document.getElementById("nome").value;
             var salarioAtual = parseFloat(document.getElementById("salario").value);
+
+            if (nome === '' || salarioAtual === '') {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
             var aumento = salarioAtual* 0.10;
 
             var salarioFinal = salarioAtual + aumento;
