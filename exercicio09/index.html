@@ -29,6 +29,12 @@
         return;
     }
 
+    if (isNaN(salarioAtual)) {
+        alert("Por favor, insira um salário válido.");
+        salarioAtualInput.focus(); // Coloca o foco no campo de salário
+        return;
+    }
+
             var aumento = salarioAtual* 0.10;
 
             var salarioFinal = salarioAtual + aumento;
