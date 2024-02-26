@@ -21,6 +21,7 @@
 
     <script>
         function calcularAumento(){
+            var nome = document.getElementById("nome").value;
             var salarioAtual = parseFloat(document.getElementById("salario").value);
             var aumento = salarioAtual* 0.10;
 
@@ -28,7 +29,7 @@
 
             console.log(salarioFinal);
 
-            document.getElementById("resultado").innerHTML = "Seu salário com aumento é: " + salarioFinal;
+            document.getElementById("resultado").innerHTML = nome + ", seu salário com aumento é: R$" + salarioFinal;
 
             
         }
