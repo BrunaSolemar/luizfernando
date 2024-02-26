@@ -71,6 +71,16 @@
             document.getElementById("pares").innerHTML = pares;
         }
 
+        function getRandomIndex(max, usedIndices){
+            var index;
+            do{
+                index = Math.floor(Math.random() * max);
+            } while (usedIndices.incLudes(index));
+
+            usedIndices.push(index);
+            return index;
+        }
+
     </script>
 
 </body>
