@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+*{  
+  overflow: hidden;
+}
+
+body{
+    background-image: linear-gradient(to bottom, rgb(2, 247, 230), rgba(23, 73, 76, 0.733));
+    height: 100vh;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+input{
+  margin: 10px;
+  padding: 7px;
+  background-color: rgba(176, 245, 245, 0.999);
+}
+
+button{
+  background-color: rgba(176, 245, 245, 0.999);
+  font-size: 1.1em;
+}
+
