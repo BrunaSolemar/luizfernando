@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação de pares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Digite os nomes</h1>
+
+    <label for="nome1">Nome 1:</label>
+    <input type="text" name="nome1" id="nome1"><br>
+
+    <label for="nome2">Nome 2:</label>
+    <input type="text" name="nome2" id="nome2"><br>
+
+    <label for="nome3">Nome 3:</label>
+    <input type="text" name="nome3" id="nome3"><br>
+
+    <label for="nome4">Nome 4:</label>
+    <input type="text" name="nome4" id="nome4"><br>
+
+    <label for="nome5">Nome 5:</label>
+    <input type="text" name="nome5" id="nome5"><br>
+
+    <label for="nome6">Nome 6:</label>
+    <input type="text" name="nome6" id="nome6"><br>
+
+    <label for="nome7">Nome 7:</label>
+    <input type="text" name="nome7" id="nome7"><br>
+
+    <label for="nome8">Nome 8:</label>
+    <input type="text" name="nome8" id="nome8"><br>
+
+    <label for="nome9">Nome 9:</label>
+    <input type="text" name="nome9" id="nome9"><br>
+
+    <button onclick="formarPares()">Forme pares</button>
+
+    <p id="pares"></p>
+
+    <script>
+        function formarPares(){
+            var nomes = [];
+            for (var i = 1; i <= 9; i++){
+                var nome = document.getElementById("nome" + i).value.trim();
+                if (nome === '') {
+                alert("Por favor, preencha todos os campos de nome.");
+                return; // Sai da função se algum campo estiver em branco
+            }
+                if (nome !== ''){
+                    nomes.push(nome);
+                }
+            }
+
+            var pares = '';
+            var repeticoes = 0;
+
+            while (repeticoes < 5){
+                var indice1 = Math.floor(Math.random() * nomes.length);
+                var indice2 = Math.floor(Math.random() * nomes.length);
+
+                if (indice1 !== indice2){//garante que os indices nao são iguais
+                    pares += nomes[indice1] + ' - ' + nomes[indice2] + '<br>';
+                    repeticoes++;
+
+                }
+            }
+
+            document.getElementById("pares").innerHTML = pares;
+        }
+
+    </script>
+
+</body>
+</html>
