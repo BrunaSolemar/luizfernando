@@ -133,11 +133,11 @@
     
 
     <script>
-         $(function() {
+             $(function() {
             // Lista de nomes
             var nomes = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
             var nomesExcluidosMicrofone = ["Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio"]; // Nomes a serem excluídos das colunas "Microfone 1" e "Microfone 2"
-            var nomesExcluidosIndicador = ["Renan", "Rodrigo"]; // Nomes a serem excluídos das colunas "Indicador 1" e "Indicador 2"
+            var nomesExcluidosIndicador = []; // Nomes a serem excluídos das colunas "Indicador 1" e "Indicador 2"
 
             // Função para atualizar as opções de seleção e aplicar a lógica de desabilitação
             function atualizarOpcoesSelect(selects, nomesExcluidos) {
@@ -148,7 +148,7 @@
 
                     // Adicionar todas as opções que não estão selecionadas em outras colunas e não estão na lista de nomes excluídos
                     nomes.forEach(function(nome) {
-                        if (nomesExcluidos.indexOf(nome) === -1) {
+                        if (nomesExcluidos.indexOf(nome) === -1 || (name !== "microfone1" && name !== "microfone2")) {
                             var selectedInOtherColumn = false;
                             selects.each(function() {
                                 if ($(this).attr("name") !== name && $(this).val() === nome) {
@@ -171,17 +171,24 @@
             }
 
             // Inicializar selects e adicionar evento de mudança
-            var selectElements = $('select[name="microfone1"], select[name="microfone2"], select[name="indicador1"], select[name="indicador2"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
-            atualizarOpcoesSelect(selectElements, nomesExcluidosMicrofone);
-            selectElements.change(function() {
-                var selectName = $(this).attr("name");
-                if (selectName === "microfone1" || selectName === "microfone2") {
-                    atualizarOpcoesSelect(selectElements, nomesExcluidosMicrofone);
-                } else if (selectName === "indicador1" || selectName === "indicador2") {
-                    atualizarOpcoesSelect(selectElements, nomesExcluidosIndicador);
-                } else {
-                    atualizarOpcoesSelect(selectElements, []);
-                }
+            var selectMicrofone1 = $('select[name="microfone1"]');
+            var selectMicrofone2 = $('select[name="microfone2"]');
+            var selectIndicador1 = $('select[name="indicador1"]');
+            var selectIndicador2 = $('select[name="indicador2"]');
+            var selectLeituraMeioSemana = $('select[name="leitura_meio_de_semana"]');
+            var selectLeituraFinalSemana = $('select[name="leitura_final_de_semana"]');
+
+            var allSelectElements = selectMicrofone1.add(selectMicrofone2).add(selectIndicador1).add(selectIndicador2).add(selectLeituraMeioSemana).add(selectLeituraFinalSemana);
+            
+            atualizarOpcoesSelect(allSelectElements, nomesExcluidosMicrofone);
+            selectMicrofone1.add(selectMicrofone2).change(function() {
+                atualizarOpcoesSelect(selectMicrofone1.add(selectMicrofone2), nomesExcluidosMicrofone);
+            });
+            selectIndicador1.add(selectIndicador2).change(function() {
+                atualizarOpcoesSelect(selectIndicador1.add(selectIndicador2), nomesExcluidosIndicador);
+            });
+            selectLeituraMeioSemana.add(selectLeituraFinalSemana).change(function() {
+                atualizarOpcoesSelect(selectLeituraMeioSemana.add(selectLeituraFinalSemana), []);
             });
 
             // Inicializar datepicker
