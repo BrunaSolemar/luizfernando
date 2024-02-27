@@ -28,8 +28,10 @@
             <td></td>
             <td>Dias</td>
             
-            <td>Microfone</td>
-            <td>Indicador</td>
+            <td>Microfone 1</td>
+            <td>Microfone 2</td>
+            <td>Indicador 1</td>
+            <td>Indicador 2</td>
             <td>Leitura meio de semana</td>
             <td>Leitura final de semana</td>
         </tr>
@@ -39,8 +41,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
            
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -48,8 +52,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -57,8 +63,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -66,8 +74,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -75,8 +85,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -84,8 +96,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -93,8 +107,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -102,8 +118,10 @@
             <td class="semana">Semana </td>
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
-            <td><select name="microfone"></select></td>
-            <td><select name="indicador"></select></td>
+            <td><select name="microfone1"></select></td>
+            <td><select name="microfone2"></select></td>
+            <td><select name="indicador1"></select></td>
+            <td><select name="indicador2"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
@@ -118,34 +136,34 @@
          document.addEventListener("DOMContentLoaded", function() {
                 var nomes = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
 
-                // Gerar opções de nomes
-            var options = '';
-            nomes.forEach(function(nome) {
-                options += '<option value="' + nome + '">' + nome + '</option>';
-            });
+              // Gerar opções de nomes
+    var options = '';
+    nomes.forEach(function(nome) {
+        options += '<option value="' + nome + '">' + nome + '</option>';
+    });
 
-            // Aplicar opções e lógica de desabilitação em todas as células de seleção de nomes
-            var selectElements = document.querySelectorAll('select[name="microfone"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
-            selectElements.forEach(function(select) {
-                select.innerHTML = options;
-                select.addEventListener('change', function(event) {
-                    var selectedOption = event.target.value;
-                    var allSelects = document.querySelectorAll('select[name="microfone"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
-                    allSelects.forEach(function(sel) {
-                        var options = sel.options;
-                        for (var i = 0; i < options.length; i++) {
-                            if (options[i].value === selectedOption) {
-                                options[i].disabled = true;
-                            }
-                        }
-                    });
-                });
+    // Aplicar opções e lógica de desabilitação em todas as células de seleção de nomes
+    var selectElements = document.querySelectorAll('select[name="microfone1"], select[name="microfone2"], select[name="indicador1"], select[name="indicador2"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
+    selectElements.forEach(function(select) {
+        select.innerHTML = options;
+        select.addEventListener('change', function(event) {
+            var selectedOption = event.target.value;
+            var allSelects = document.querySelectorAll('select[name="microfone1"], select[name="microfone2"], select[name="indicador1"], select[name="indicador2"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
+            allSelects.forEach(function(sel) {
+                var options = sel.options;
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i].value === selectedOption) {
+                        options[i].disabled = true;
+                    }
+                }
             });
         });
+    });
+});
 
-        $(function() {
-            $(".datepicker").datepicker();
-        });
+$(function() {
+    $(".datepicker").datepicker();
+});
       </script>
 </body>
 </html>
