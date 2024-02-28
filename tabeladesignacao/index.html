@@ -133,7 +133,7 @@
     
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+       document.addEventListener("DOMContentLoaded", function() {
         var nomesMicrofone = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
         var nomesIndicador = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
         var nomesLeitura = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
@@ -164,26 +164,11 @@
             select.innerHTML = gerarOpcoes(nomesLeitura, []);
         });
 
-        // Lógica de desabilitação de opções
-        function desabilitarOpcoes(select, selectedOption) {
-            var options = select.options;
-            for (var i = 0; i < options.length; i++) {
-                if (options[i].value === selectedOption) {
-                    options[i].disabled = true;
-                }
-            }
-        }
-
         // Event listeners para as seleções de nomes
         var allSelects = document.querySelectorAll('select[name="microfone"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
         allSelects.forEach(function(select) {
             select.addEventListener('change', function(event) {
-                var selectedOption = event.target.value;
-                allSelects.forEach(function(sel) {
-                    if (sel !== select) {
-                        desabilitarOpcoes(sel, selectedOption);
-                    }
-                });
+                // Não há mais lógica de desabilitação de opções aqui
             });
         });
     });
