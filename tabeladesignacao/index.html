@@ -29,6 +29,8 @@
             <td>Dias</td>
             
             <td>Microfone</td>
+            <td>Microfone</td>
+            <td>Indicador</td>
             <td>Indicador</td>
             <td>Leitura meio de semana</td>
             <td>Leitura final de semana</td>
@@ -40,6 +42,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
            
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -49,6 +53,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -58,6 +64,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -67,6 +75,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -76,6 +86,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -85,6 +97,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -94,6 +108,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -103,6 +119,8 @@
             <td><input type="text" name="datepicker" class="datepicker"></td>
             
             <td><select name="microfone"></select></td>
+            <td><select name="microfone"></select></td>
+            <td><select name="indicador"></select></td>
             <td><select name="indicador"></select></td>
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
@@ -125,12 +143,12 @@
             });
 
             // Aplicar opções e lógica de desabilitação em todas as células de seleção de nomes
-            var selectElements = document.querySelectorAll('select[name="microfone"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
+            var selectElements = document.querySelectorAll('select[name="microfone"], select[name="microfone"], select[name="indicador"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
             selectElements.forEach(function(select) {
                 select.innerHTML = options;
                 select.addEventListener('change', function(event) {
                     var selectedOption = event.target.value;
-                    var allSelects = document.querySelectorAll('select[name="microfone"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
+                    var allSelects = document.querySelectorAll('select[name="microfone"], select[name="microfone"], select[name="indicador"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
                     allSelects.forEach(function(sel) {
                         var options = sel.options;
                         for (var i = 0; i < options.length; i++) {
