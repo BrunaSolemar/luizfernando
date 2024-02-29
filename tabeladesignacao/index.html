@@ -128,7 +128,15 @@
             <td><select name="leitura_meio_de_semana"></select></td>
             <td><select name="leitura_final_de_semana"></select></td>
         </tr>
-
+        <tr>
+            <td colspan="2">Total Geral</td>
+            <td id="total_microfone"></td>
+            <td id="total_microfone"></td>
+            <td id="total_indicador"></td>
+            <td id="total_indicador"></td>
+            <td id="total_leitura"></td>
+            <td id="total_leitura"></td>
+        </tr>
       
             
     </table>
@@ -136,13 +144,33 @@
     
 
     <script>
-       document.addEventListener("DOMContentLoaded", function() {
-    var nomesMicrofone = ["Selecione", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Wesley Pinheiro", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
-    var nomesIndicador = ["Selecione", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
-    var nomesLeitura = ["Selecione", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Wesley Pinheiro", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
-    var nomesExcluidosMicrofone = ["Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "José Carlos", "Raimundo", "João Oneldo"];
-    var nomesExcluidosIndicador = [""];
-    var nomesExcluidosFim = ["Raimundo", "José Carlos", "Aparecido Teodoro", "Francisco Costa", "Jairo Santana", "Ismar Coelho"];
+      var nomesMicrofone = ["Selecione", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Wesley Pinheiro", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
+var nomesIndicador = ["Selecione", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
+var nomesLeitura = ["Selecione", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Wesley Pinheiro", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
+var nomesExcluidosMicrofone = ["Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "José Carlos", "Raimundo", "João Oneldo"];
+var nomesExcluidosIndicador = [""];
+var nomesExcluidosFim = ["Raimundo", "José Carlos", "Aparecido Teodoro", "Francisco Costa", "Jairo Santana", "Ismar Coelho"];
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    var counters = {};
+
+    // Função para inicializar os contadores para cada nome
+    function initializeCounters(nomes) {
+        nomes.forEach(function(nome) {
+            counters[nome] = 0;
+        });
+    }
+
+    // Inicializar contadores
+    initializeCounters(nomesMicrofone);
+    initializeCounters(nomesIndicador);
+    initializeCounters(nomesLeitura);
+
+    function updateCounter(nome) {
+        counters[nome]++;
+        document.getElementById(nome + "_counter").textContent = counters[nome];
+    }
 
     function gerarOpcoes(nomes, nomesExcluidos) {
         var options = '';
@@ -183,6 +211,9 @@
             var selectedOptionsInRow = row.querySelectorAll('select option:checked');
             var selectedNamesInRow = Array.from(selectedOptionsInRow).map(option => option.value);
             
+            // Atualizar contador para o nome selecionado
+            updateCounter(selectedOption);
+            
             // Contar quantas vezes o nome selecionado aparece na linha
             var count = selectedNamesInRow.filter(name => name === selectedOption).length;
             
@@ -196,6 +227,9 @@
     });
 });
 
+</script>
+
+<script>
 $(function() {
     $(".datepicker").datepicker();
 });
