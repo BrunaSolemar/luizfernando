@@ -134,48 +134,66 @@
 
     <script>
        document.addEventListener("DOMContentLoaded", function() {
-        var nomesMicrofone = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
-        var nomesIndicador = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
-        var nomesLeitura = ["", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo"];
-        var nomesExcluidosMicrofone = ["Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio"]; // Nomes a serem excluídos das opções de microfone
-        var nomesExcluidosIndicador = ["Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio"]; // Nomes a serem excluídos das opções de indicador
+    var nomesMicrofone = ["Selecione", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Wesley Pinheiro", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
+    var nomesIndicador = ["Selecione", "Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
+    var nomesLeitura = ["Selecione", "Daniel", "José Carlos", "Lucas Gestoso", "Lucas Sant ana", "Raimundo", "Roberto Rangel", "Roberto Silva", "Rodrigo do Carmo", "Aparecido Teodoro", "Fabio Stekl", "Fernando Teodoro", "Francisco Costa", "Ismar Coelho", "Jairo Santana", "João Oneldo", "Kevin Oliveira", "Lucas Chagas", "Wesley Pinheiro", "Davi Santos", "Emerson Carvalho", "Gustavo Zullu", "Lucas Simões", "Messias Nunes"];
+    var nomesExcluidosMicrofone = ["Renan", "Rodrigo", "Marcos", "Jailson", "Sergio", "Alexandre", "Deric", "Claudio", "José Carlos", "Raimundo", "João Oneldo"];
+    var nomesExcluidosIndicador = [""];
+    var nomesExcluidosFim = ["Raimundo", "José Carlos", "Aparecido Teodoro", "Francisco Costa", "Jairo Santana", "Ismar Coelho"];
 
-        function gerarOpcoes(nomes, nomesExcluidos) {
-            var options = '';
-            nomes.forEach(function(nome) {
-                if (!nomesExcluidos.includes(nome)) {
-                    options += '<option value="' + nome + '">' + nome + '</option>';
-                }
-            });
-            return options;
-        }
+    function gerarOpcoes(nomes, nomesExcluidos) {
+        var options = '';
+        nomes.forEach(function(nome) {
+            if (!nomesExcluidos.includes(nome)) {
+                options += '<option value="' + nome + '">' + nome + '</option>';
+            }
+        });
+        return options;
+    }
 
-        // Aplicar opções e lógica de desabilitação em todas as células de seleção de nomes
-        var selectElementsMicrofone = document.querySelectorAll('select[name="microfone"]');
-        var selectElementsIndicador = document.querySelectorAll('select[name="indicador"]');
-        var selectElementsLeitura = document.querySelectorAll('select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
-        selectElementsMicrofone.forEach(function(select) {
-            select.innerHTML = gerarOpcoes(nomesMicrofone, nomesExcluidosMicrofone);
-        });
-        selectElementsIndicador.forEach(function(select) {
-            select.innerHTML = gerarOpcoes(nomesIndicador, nomesExcluidosIndicador);
-        });
-        selectElementsLeitura.forEach(function(select) {
-            select.innerHTML = gerarOpcoes(nomesLeitura, []);
-        });
-
-        // Event listeners para as seleções de nomes
-        var allSelects = document.querySelectorAll('select[name="microfone"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
-        allSelects.forEach(function(select) {
-            select.addEventListener('change', function(event) {
-                // Não há mais lógica de desabilitação de opções aqui
-            });
-        });
+    // Aplicar opções e lógica de desabilitação em todas as células de seleção de nomes
+    var selectElementsMicrofone = document.querySelectorAll('select[name="microfone"]');
+    var selectElementsIndicador = document.querySelectorAll('select[name="indicador"]');
+    var selectElementsLeitura = document.querySelectorAll('select[name="leitura_meio_de_semana"]');
+    var selectElementsFim = document.querySelectorAll('select[name="leitura_final_de_semana"]');
+    selectElementsMicrofone.forEach(function(select) {
+        select.innerHTML = gerarOpcoes(nomesMicrofone, nomesExcluidosMicrofone);
+    });
+    selectElementsIndicador.forEach(function(select) {
+        select.innerHTML = gerarOpcoes(nomesIndicador, nomesExcluidosIndicador);
+    });
+    selectElementsLeitura.forEach(function(select) {
+        select.innerHTML = gerarOpcoes(nomesLeitura, []);
+    });
+    selectElementsFim.forEach(function(select) {
+        select.innerHTML = gerarOpcoes(nomesLeitura, nomesExcluidosFim);
     });
 
-    $(function() {
-        $(".datepicker").datepicker();
+    // Event listeners para as seleções de nomes
+    var allSelects = document.querySelectorAll('select[name="microfone"], select[name="indicador"], select[name="leitura_meio_de_semana"], select[name="leitura_final_de_semana"]');
+    allSelects.forEach(function(select) {
+        select.addEventListener('change', function(event) {
+            var selectedOption = event.target.value;
+            var row = event.target.closest('tr');
+            var selectedOptionsInRow = row.querySelectorAll('select option:checked');
+            var selectedNamesInRow = Array.from(selectedOptionsInRow).map(option => option.value);
+            
+            // Contar quantas vezes o nome selecionado aparece na linha
+            var count = selectedNamesInRow.filter(name => name === selectedOption).length;
+            
+            // Se o nome aparecer mais de uma vez, mudar a cor de fundo da célula
+            if (count > 1) {
+                event.target.style.backgroundColor = 'red';
+            } else {
+                event.target.style.backgroundColor = ''; // Resetar a cor de fundo
+            }
+        });
     });
+});
+
+$(function() {
+    $(".datepicker").datepicker();
+});
       </script>
 </body>
 </html>
