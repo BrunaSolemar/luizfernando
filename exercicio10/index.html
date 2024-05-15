@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros de 1 a 10</title>
+</head>
+<body>
+<h1>Digite um número</h1>
+<div id="numbersContainer"></div>
+
+
+    <script>
+        const numbersContainer = document.getElementById('numbersContainer');
+        for (let i = 1; i <=10; i ++){
+            const numberElement = document.createElement('p');
+    
+    // Adicionando a classe "number" para estilização
+    numberElement.classList.add('number');
+    
+    // Definindo o texto do parágrafo como o número atual
+    numberElement.textContent = i;
+    
+    // Adicionando o elemento de número ao contêiner
+    numbersContainer.appendChild(numberElement);
+}
+        
+    </script>
+</body>
+</html>
